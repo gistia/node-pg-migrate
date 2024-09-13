@@ -209,7 +209,7 @@ export class Migration implements RunMigration {
 
       case this.up: {
         this.logger.info(`### MIGRATION ${this.name} (UP) ###`);
-        return `INSERT INTO "${schema}"."${migrationsTable}" (name, run_on) VALUES ('${name}', NOW());`;
+        return `INSERT INTO "${schema}"."${migrationsTable}" (name, run_on) VALUES ('${name}', CURRENT_TIMESTAMP);`;
       }
 
       default: {
