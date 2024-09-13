@@ -74,7 +74,7 @@ node_modules/
 versions.json
 
 # Dist
-/dist
+# /dist
 /docs/.vitepress/cache
 /docs/.vitepress/dist
 /lib
