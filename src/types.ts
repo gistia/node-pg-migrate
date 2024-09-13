@@ -865,6 +865,8 @@ export interface RunnerOptionConfig {
    * Print all debug messages like DB queries run (if you switch it on, it will disable `logger.debug` method).
    */
   verbose?: boolean;
+
+  isRedshift?: boolean;
 }
 
 export interface RunnerOptionUrl {

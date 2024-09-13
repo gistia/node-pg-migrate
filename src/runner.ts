@@ -121,8 +121,9 @@ async function ensureMigrationsTable(
         );
       }
     } else {
+      const type = options.isRedshift ? 'INT IDENTITY(1, 1)' : 'SERIAL';
       await db.query(
-        `CREATE TABLE ${fullTableName} (${idColumn} SERIAL PRIMARY KEY, ${nameColumn} varchar(255) NOT NULL, ${runOnColumn} timestamp NOT NULL)`
+        `CREATE TABLE ${fullTableName} (${idColumn} ${type} PRIMARY KEY, ${nameColumn} varchar(255) NOT NULL, ${runOnColumn} timestamp NOT NULL)`
       );
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
